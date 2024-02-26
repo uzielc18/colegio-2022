@@ -120,7 +120,7 @@ class MarkController extends Controller
         $section_id = $request->query('section_id');
         $course_id = $request->query('course_id');
         $semester_id = $request->query('semester_id', 0);
-        
+
         try{
 
             $current_school_session_id = $this->getSchoolCurrentSession();
@@ -139,7 +139,7 @@ class MarkController extends Controller
             $sectionStudents = $this->userRepository->getAllStudents($current_school_session_id, $class_id, $section_id);
 
             $final_marks_submitted = false;
-            
+
             $final_marks_submit_count = $markRepository->getFinalMarksCount($current_school_session_id, $semester_id, $class_id, $section_id, $course_id);
 
             if($final_marks_submit_count > 0) {
@@ -228,7 +228,7 @@ class MarkController extends Controller
             $markRepository = new MarkRepository();
             $markRepository->create($rows);
 
-            return back()->with('status', 'Saving marks was successful!');
+            return back()->with('status', '¡El guardado de marcas fue exitoso!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }

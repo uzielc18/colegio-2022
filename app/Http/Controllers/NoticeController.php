@@ -13,7 +13,7 @@ use App\Interfaces\SchoolSessionInterface;
 class NoticeController extends Controller
 {
     use SchoolSession;
-    
+
     protected $schoolSessionRepository;
 
     public function __construct(SchoolSessionInterface $schoolSessionRepository) {
@@ -52,7 +52,7 @@ class NoticeController extends Controller
             $noticeRepository = new NoticeRepository();
             $noticeRepository->store($request->validated());
 
-            return back()->with('status', 'Creating Notice was successful!');
+            return back()->with('status', '¡La creación del aviso fue exitosa!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }

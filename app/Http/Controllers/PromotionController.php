@@ -23,7 +23,7 @@ class PromotionController extends Controller
 
     /**
     * Create a new Controller instance
-    * 
+    *
     * @param SchoolSessionInterface $schoolSessionRepository
     * @return void
     */
@@ -41,7 +41,7 @@ class PromotionController extends Controller
     /**
      * Display a listing of the resource.
      * @param  \Illuminate\Http\Request  $request
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -78,7 +78,7 @@ class PromotionController extends Controller
     /**
      * Show the form for creating a new resource.
      * @param  \Illuminate\Http\Request  $request
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
@@ -144,7 +144,7 @@ class PromotionController extends Controller
             $promotionRepository = new PromotionRepository();
             $promotionRepository->massPromotion($rows);
 
-            return back()->with('status', 'Promoting students was successful!');
+            return back()->with('status', '¡La promoción de los estudiantes fue exitosa!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }

@@ -9,7 +9,7 @@
             <div class="row pt-2">
                 <div class="col ps-4">
                     <h1 class="display-6 mb-3">
-                        <i class="bi bi-tools"></i> Academic Settings
+                        <i class="bi bi-tools"></i> @lang('settings.configuration_academica')
                     </h1>
 
                     @include('session-messages')
@@ -21,14 +21,19 @@
                                 <div class="p-3 border bg-light shadow-sm">
                                     <h6>Create Session</h6>
                                     <p class="text-danger">
-                                        <small><i class="bi bi-exclamation-diamond-fill me-2"></i> Create one Session per academic year. Last created session will be considered as the latest academic session.</small>
+                                        <small>
+                                            <i class="bi bi-exclamation-diamond-fill me-2"></i>
+                                            @lang('settings.create_session_academic_last_session')
+                                            Create one Session per academic year. Last created session will be considered as the latest academic session.
+                                        </small>
                                     </p>
                                     <form action="{{route('school.session.store')}}" method="POST">
                                         @csrf
                                         <div class="mb-3">
                                             <input type="text" class="form-control form-control-sm" placeholder="2021 - 2022" aria-label="Current Session" name="session_name" required>
                                         </div>
-                                        <button class="btn btn-sm btn-outline-primary" type="submit"><i class="bi bi-check2"></i> Create</button>
+                                        <button class="btn btn-sm btn-outline-primary" type="submit"><i class="bi bi-check2"></i>
+                                            @lang('btn.create')Create</button>
                                     </form>
                                 </div>
                             </div>
@@ -267,7 +272,7 @@
     function getSectionsAndCourses(obj) {
         var class_id = obj.options[obj.selectedIndex].value;
 
-        var url = "{{route('get.sections.courses.by.classId')}}?class_id=" + class_id 
+        var url = "{{route('get.sections.courses.by.classId')}}?class_id=" + class_id
 
         fetch(url)
         .then((resp) => resp.json())

@@ -112,7 +112,7 @@ class ExamController extends Controller
             $examRepository = new ExamRepository();
             $examRepository->create($request->validated());
 
-            return back()->with('status', 'Exam creation was successful!');
+            return back()->with('status', '¡La creación del examen fue exitosa!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }

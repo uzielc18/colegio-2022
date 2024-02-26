@@ -23,7 +23,7 @@ class GradeRuleController extends Controller
     /**
      * Display a listing of the resource.
      * @param  \Illuminate\Http\Request  $request
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -40,7 +40,7 @@ class GradeRuleController extends Controller
     /**
      * Show the form for creating a new resource.
      * @param  \Illuminate\Http\Request  $request
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
@@ -62,7 +62,7 @@ class GradeRuleController extends Controller
             $gradeRuleRepository = new GradeRuleRepository();
             $gradeRuleRepository->store($request->validated());
 
-            return back()->with('status', 'Creating grading system rule was successful!');
+            return back()->with('status', '¡La creación de la regla del sistema de calificaciones fue exitosa!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }
@@ -114,7 +114,7 @@ class GradeRuleController extends Controller
             $gradeRuleRepository = new GradeRuleRepository();
             $gradeRuleRepository->delete($request->id);
 
-            return back()->with('status', 'Deleting grading system rule was successful!');
+            return back()->with('status', '¡La eliminación de la regla del sistema de calificaciones fue exitosa!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }

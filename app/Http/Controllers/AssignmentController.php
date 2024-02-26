@@ -17,7 +17,7 @@ class AssignmentController extends Controller
 
     /**
     * Create a new Controller instance
-    * 
+    *
     * @param CourseInterface $schoolCourseRepository
     * @return void
     */
@@ -40,7 +40,7 @@ class AssignmentController extends Controller
         ];
         return view('assignments.index', $data);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -78,7 +78,7 @@ class AssignmentController extends Controller
             $assignmentRepository = new AssignmentRepository();
             $assignmentRepository->store($validatedRequest);
 
-            return back()->with('status', 'Creating assignment was successful!');
+            return back()->with('status', '¡La creación de la tarea fue exitosa!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }

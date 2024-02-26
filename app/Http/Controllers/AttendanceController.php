@@ -66,7 +66,7 @@ class AttendanceController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * 
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -123,7 +123,7 @@ class AttendanceController extends Controller
             $attendanceRepository = new AttendanceRepository();
             $attendanceRepository->saveAttendance($request->validated());
 
-            return back()->with('status', 'Attendance save was successful!');
+            return back()->with('status', '¡El guardado de asistencia fue exitoso!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }
@@ -157,7 +157,7 @@ class AttendanceController extends Controller
                 $attendances = $attendanceRepository->getCourseAttendance($class_id, $course_id, $current_school_session_id);
             }
             $data = ['attendances' => $attendances];
-            
+
             return view('attendances.view', $data);
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());

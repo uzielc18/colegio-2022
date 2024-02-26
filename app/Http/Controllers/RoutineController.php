@@ -22,7 +22,7 @@ class RoutineController extends Controller
         $this->schoolSessionRepository = $schoolSessionRepository;
         $this->schoolClassRepository = $schoolClassRepository;
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -63,7 +63,7 @@ class RoutineController extends Controller
             $routineRepository = new RoutineRepository();
             $routineRepository->saveRoutine($request->validated());
 
-            return back()->with('status', 'Routine save was successful!');
+            return back()->with('status', '¡El guardado de rutina fue exitoso!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }

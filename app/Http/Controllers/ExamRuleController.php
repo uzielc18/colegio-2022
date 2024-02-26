@@ -70,7 +70,7 @@ class ExamRuleController extends Controller
             $examRuleRepository = new ExamRuleRepository();
             $examRuleRepository->create($request->validated());
 
-            return back()->with('status', 'Exam rule creation was successful!');
+            return back()->with('status', '¡La creación de las reglas del examen fue exitosa!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }

@@ -19,7 +19,7 @@ class CourseController extends Controller
 
     /**
     * Create a new Controller instance
-    * 
+    *
     * @param CourseInterface $schoolCourseRepository
     * @return void
     */
@@ -59,7 +59,7 @@ class CourseController extends Controller
         try {
             $this->schoolCourseRepository->create($request->validated());
 
-            return back()->with('status', 'Course creation was successful!');
+            return back()->with('status', '¡La creación del curso fue exitosa!');
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }
